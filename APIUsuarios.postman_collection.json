@@ -1,0 +1,210 @@
+{
+  "info": {
+    "_postman_id": "api-usuarios-collection",
+    "name": "API Usuários",
+    "description": "Collection para testes da API de Gerenciamento de Usuários",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Criar usuário válido",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"senha\": \"Senha123\",\n  \"dataNascimento\": \"2000-05-15\",\n  \"telefone\": \"(11) 98765-4321\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Criar usuário com email duplicado (deve falhar)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Outro Usuário\",\n  \"email\": \"joao@email.com\",\n  \"senha\": \"Senha456\",\n  \"dataNascimento\": \"2001-03-20\",\n  \"telefone\": \"(21) 99876-5432\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Criar usuário com dados inválidos (deve falhar)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"AB\",\n  \"email\": \"email-invalido\",\n  \"senha\": \"123\",\n  \"dataNascimento\": \"2010-01-01\",\n  \"telefone\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Listar todos os usuários",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Buscar usuário por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios/1",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. Atualizar usuário",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.novo@email.com\",\n  \"dataNascimento\": \"2000-05-15\",\n  \"telefone\": \"(11) 99999-9999\",\n  \"ativo\": true\n}"
+        },
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios/1",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7. Deletar usuário (Soft Delete)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios/1",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8. Verificar usuário após delete (Ativo=false)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:5001/api/usuarios/1",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
