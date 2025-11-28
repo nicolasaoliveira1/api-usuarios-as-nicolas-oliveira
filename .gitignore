@@ -10,16 +10,23 @@ obj/
 
 # Visual Studio Code
 .vscode/
+launch.json
+
+# Visual Studio
+.vs/
+.vscode
 
 # Database files
 *.db
 *.sqlite
+*.sqlite3
 
 # Migrations generated files (optional, se não quiser versionar)
 #APIUsuarios/Migrations/
 
 # Logs
 *.log
+logs/
 
 # OS generated files
 Thumbs.db
@@ -29,11 +36,29 @@ Desktop.ini
 
 # Rider
 .idea/
+*.iml
 
 # Test results
 TestResults/
+coverage/
 
 # NuGet
 *.nupkg
 packages/
 .nuget/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.editorconfig
+*.DotSettings
+*.DotSettings.user
+
+# Miscellaneous
+.cache/
+.temp/
+tmp/
+*.tmp
