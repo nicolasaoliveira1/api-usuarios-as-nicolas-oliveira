@@ -1,5 +1,14 @@
 # API de Gerenciamento de Usuários
 
+## Autor
+
+**Nicolas Oliveira**  
+Curso: Análise e Desenvolvimento de Sistemas
+Disciplina: Desenvolvimento Backend C#
+
+## Vídeo de apresentação
+https://drive.google.com/file/d/1JVqQWb3wi6t6d0PuXRH8C6pjQRwhpzz0/view?usp=sharing
+
 ## Descrição
 
 Esta é uma API RESTful desenvolvida em ASP.NET Core 9.0 para gerenciamento de usuários, seguindo os princípios de Clean Architecture e boas práticas de desenvolvimento. A aplicação implementa operações CRUD (Create, Read, Update, Delete) completas com validações robustas, segurança de dados (hash de senhas com BCrypt) e soft delete.
@@ -232,9 +241,3 @@ APIUsuarios/
 - Índice único no banco de dados garante unicidade de email
 - Validação automática com FluentValidation em todos os endpoints
 - Tratamento de exceções com status codes HTTP apropriados
-
-## Autor
-
-**Nicolas Oliveira**  
-Curso: Análise e Desenvolvimento de Sistemas
-
